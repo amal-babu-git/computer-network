@@ -1,0 +1,18 @@
+n -t 0 -s 0 -S DLABEL -l "source/tcp0" -L ""
+n -t 0 -s 1 -S DLABEL -l "source/udp0" -L ""
+n -t 0 -s 2 -S DLABEL -l "destination/null0" -L ""
+n -t 0 -s 3 -S DLABEL -l "destnation/sink0" -L ""
+V -t * -v 1.0a5 -a 0
+A -t * -n 1 -p 0 -o 0x7fffffff -c 30 -a 1
+A -t * -h 1 -m 1073741823 -s 0
+c -t * -i 1 -n red
+c -t * -i 2 -n blue
+n -t * -a 4 -s 4 -S UP -v circle -c black -i black
+n -t * -a 0 -s 0 -S UP -v square -c red -i red
+n -t * -a 1 -s 1 -S UP -v hexagon -c red -i red
+n -t * -a 2 -s 2 -S UP -v hexagon -c green -i green
+n -t * -a 3 -s 3 -S UP -v square -c green -i green
+l -t * -s 0 -d 4 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 1 -d 4 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 2 -d 4 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 3 -d 4 -S UP -r 1000000 -D 0.01 -c black

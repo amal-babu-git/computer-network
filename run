@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+cc -c $1.c 
+cc $1.c -o $1
+./$1 
